@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * REST controller for user-related endpoints
- */
 @RestController
 @RequestMapping("/api/users")
 @Slf4j
@@ -23,11 +20,6 @@ public class UserController {
 
     private final UserRepository userRepository;
 
-    /**
-     * Get all users from the database
-     * 
-     * @return List of all users
-     */
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         log.info("Get all users requested");
@@ -35,12 +27,6 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
-    /**
-     * Get a specific user by ID
-     * 
-     * @param id The user ID
-     * @return User if found, 404 otherwise
-     */
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         log.info("Get user by id requested: {}", id);

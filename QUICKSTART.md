@@ -13,14 +13,14 @@ Follow these steps to get the Debezium CDC example running in minutes.
 
 ```bash
 # Start all services
-docker-compose up -d
+docker compose up -d
 
 # Wait for services to be healthy
 echo "Waiting for services to start..."
 sleep 30
 
 # Check service health
-docker-compose ps
+docker compose ps
 ```
 
 All services should show "healthy" status.

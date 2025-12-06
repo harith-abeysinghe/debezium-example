@@ -14,9 +14,6 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * REST controller providing health check and status endpoints
- */
 @RestController
 @RequestMapping("/api")
 @Slf4j
@@ -31,11 +28,6 @@ public class HealthController {
     @Value("${kafka.topic.users}")
     private String kafkaTopic;
 
-    /**
-     * Health check endpoint
-     * 
-     * @return Health status
-     */
     @GetMapping("/health")
     public ResponseEntity<HealthResponse> health() {
         log.info("Health check requested");
@@ -48,11 +40,6 @@ public class HealthController {
         return ResponseEntity.ok(response);
     }
 
-    /**
-     * Status endpoint providing application configuration
-     * 
-     * @return Application status and configuration
-     */
     @GetMapping("/status")
     public ResponseEntity<Map<String, Object>> status() {
         log.info("Status check requested");

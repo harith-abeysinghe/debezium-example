@@ -1,6 +1,12 @@
 package com.example.debezium.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,11 +17,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
-/**
- * User entity representing the users table in PostgreSQL
- * Uses Lombok annotations to reduce boilerplate code
- * Uses Spring Data JPA auditing for automatic timestamp management
- */
 @Entity
 @Table(name = "users")
 @EntityListeners(AuditingEntityListener.class)
